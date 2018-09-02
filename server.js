@@ -51,6 +51,14 @@ $("p.title").each(function(i,element){
     .children("a")
     .attr("href");
 
+    db.Article.create(result)
+    .then(function(dbArticle){
+        console.log(dbArticle);
+    })
+    .catch(function(err){
+        return res.json(err);
+    });
+
     // var title = $(element).text();
     
 
@@ -61,7 +69,7 @@ $("p.title").each(function(i,element){
     //     link: link
     // });
 });
-console.log(results);
+res.send("Scrape Complete");
     });
 
 });
