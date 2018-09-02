@@ -38,18 +38,28 @@ app.get("/scrape", function(req,res) {
 var $= cheerio.load(html);
 
 
-var results=[];
+
 $("p.title").each(function(i,element){
    
-    var title = $(element).text();
+    var result ={};
+
+    result.title =$(this)
+    .children('a')
+    .text();
+
+    result.link= $(this)
+    .children("a")
+    .attr("href");
+
+    // var title = $(element).text();
     
 
-    var link =$(element).children().attr("href");
+    // var link =$(element).children().attr("href");
 
-    results.push({
-        title: title,
-        link: link
-    });
+    // result.push({
+    //     title: title,
+    //     link: link
+    // });
 });
 console.log(results);
     });
