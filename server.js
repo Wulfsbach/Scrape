@@ -73,6 +73,19 @@ res.send("Scrape Complete");
     });
 
 });
+
+
+app.get("/articles", function(req,res){
+    db.Article.find({})
+    .then(function(dbArticle){
+        res.json(dbArticle);
+    })
+    .catch(function(err){
+res.json(err);
+    });
+});
+
+
 app.listen(PORT, function(){
     console.log("Running on Port " +  PORT);
 });
