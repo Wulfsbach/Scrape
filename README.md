@@ -3,14 +3,29 @@
 A javascript program that scrapes the front page of the world-news section of reddit.
 
 
-# Technologies
+## Technologies
+
 Javscript
+
 Mongoose
+
 MongdoDB
 
-# Required Packages
 
+## Required npm Packages
 
-# Authors
+Express
+
+handlebars
+
+bodyparser
+
+mongoose
+
+request
+
+cheerio
+
+## Authors
 
 Edward Temelkos
